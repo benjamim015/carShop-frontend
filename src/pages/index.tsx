@@ -5,12 +5,14 @@ import CarShop from '../components/CarShop';
 
 import { Header, PageWrapper, Title, CarShops } from '../styles/pages/home';
 
+interface CarShopProps {
+  id: string;
+  name: string;
+  image: string;
+}
+
 interface HomeProps {
-  carShops: {
-    id: string;
-    name: string;
-    image: string;
-  };
+  carShops: Array<CarShopProps>;
 }
 
 export const getServerSideProps: GetServerSideProps = async () => {
@@ -31,11 +33,13 @@ export default function Home({ carShops }: HomeProps) {
       <Title>Car Shops</Title>
       <PageWrapper>
         <CarShops>
-          <CarShop />
-          <CarShop />
-          <CarShop />
-          <CarShop />
-          <CarShop />
+          {carShops.map(carShop => (
+            <CarShop
+              key={carShop.id}
+              image={carShop.image}
+              name={carShop.name}
+            />
+          ))}
         </CarShops>
       </PageWrapper>
     </>

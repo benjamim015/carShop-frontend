@@ -2,10 +2,20 @@ import React from 'react';
 
 import { Container } from './styles';
 
-const CarShop = () => (
+interface CarShopProps {
+  name: string;
+  image: string;
+}
+
+const CarShop = ({ name, image }: CarShopProps) => (
   <Container>
-    <div />
-    <h2>Test</h2>
+    <img
+      src={`http://localhost:3333/static/${image}`}
+      alt={name}
+      width="256"
+      height="208"
+    />
+    <h2>{name}</h2>
   </Container>
 );
 
