@@ -3,7 +3,9 @@ import React from 'react';
 
 import api from '../services/api';
 import CarShop from '../components/CarShop';
-import { Header, PageWrapper, Title, CarShops } from '../styles/pages/home';
+import Header from '../components/Header';
+
+import { PageWrapper, Title, CarShops } from '../styles/pages/home';
 
 interface CarShopProps {
   id: string;

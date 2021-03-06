@@ -2,8 +2,8 @@ import React from 'react';
 import { GetStaticPaths, GetStaticProps } from 'next';
 
 import api from '../../services/api';
+import Header from '../../components/Header';
 import {
-  Header,
   Title,
   PageWrapper,
   CarsContainer,

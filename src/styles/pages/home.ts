@@ -1,12 +1,5 @@
 import styled from 'styled-components';
 
-export const Header = styled.header`
-  background: #29292e;
-  width: 100%;
-  height: 120px;
-  margin-bottom: 80px;
-`;
-
 export const Title = styled.h1`
   display: flex;
   white-space: nowrap;
