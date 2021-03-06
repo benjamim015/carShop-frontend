@@ -1,4 +1,6 @@
+import { GetServerSideProps } from 'next';
 import React from 'react';
+import api from '../services/api';
 
 import {
   Header,
@@ -8,7 +10,26 @@ import {
   CarShop,
 } from '../styles/pages/home';
 
-export default function Home() {
+interface HomeProps {
+  carShops: {
+    id: string;
+    name: string;
+    image: string;
+  };
+}
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  const res = await api.get('/carShops');
+  const carShops = res.data;
+
+  return {
+    props: {
+      carShops,
+    },
+  };
+};
+
+export default function Home({ carShops }: HomeProps) {
   return (
     <>
       <Header />
