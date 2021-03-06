@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+  cursor: pointer;
   min-width: 256px;
   min-height: 256px;
   background: #29292e;
@@ -11,6 +12,7 @@ export const Container = styled.div`
   align-items: center;
 
   img {
+    object-fit: cover;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
   }

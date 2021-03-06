@@ -1,8 +1,8 @@
 import { GetServerSideProps } from 'next';
 import React from 'react';
+
 import api from '../services/api';
 import CarShop from '../components/CarShop';
-
 import { Header, PageWrapper, Title, CarShops } from '../styles/pages/home';
 
 interface CarShopProps {
@@ -33,13 +33,18 @@ export default function Home({ carShops }: HomeProps) {
       <Title>Car Shops</Title>
       <PageWrapper>
         <CarShops>
-          {carShops.map(carShop => (
-            <CarShop
-              key={carShop.id}
-              image={carShop.image}
-              name={carShop.name}
-            />
-          ))}
+          {carShops ? (
+            carShops.map(carShop => (
+              <CarShop
+                key={carShop.id}
+                id={carShop.id}
+                image={carShop.image}
+                name={carShop.name}
+              />
+            ))
+          ) : (
+            <p>We don&apos;t have a registered car shop yet :(</p>
+          )}
         </CarShops>
       </PageWrapper>
     </>
