@@ -1,14 +1,9 @@
 import { GetServerSideProps } from 'next';
 import React from 'react';
 import api from '../services/api';
+import CarShop from '../components/CarShop';
 
-import {
-  Header,
-  PageWrapper,
-  Title,
-  CarShops,
-  CarShop,
-} from '../styles/pages/home';
+import { Header, PageWrapper, Title, CarShops } from '../styles/pages/home';
 
 interface HomeProps {
   carShops: {
@@ -36,26 +31,11 @@ export default function Home({ carShops }: HomeProps) {
       <Title>Car Shops</Title>
       <PageWrapper>
         <CarShops>
-          <CarShop>
-            <div />
-            <h2>Test</h2>
-          </CarShop>
-          <CarShop>
-            <div />
-            <h2>Test</h2>
-          </CarShop>
-          <CarShop>
-            <div />
-            <h2>Test</h2>
-          </CarShop>
-          <CarShop>
-            <div />
-            <h2>Test</h2>
-          </CarShop>
-          <CarShop>
-            <div />
-            <h2>Test</h2>
-          </CarShop>
+          <CarShop />
+          <CarShop />
+          <CarShop />
+          <CarShop />
+          <CarShop />
         </CarShops>
       </PageWrapper>
     </>
