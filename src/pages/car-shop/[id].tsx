@@ -48,7 +48,7 @@ export const getStaticPaths: GetStaticPaths = async () => ({
 export default function Home({ carShop }: CarShopProps) {
   return (
     <>
-      <Header />
+      <Header showArrowBack />
       <Title>{carShop.name}</Title>
       <PageWrapper>
         <CarsContainer>
