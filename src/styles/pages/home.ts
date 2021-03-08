@@ -28,6 +28,6 @@ export const CarShops = styled.div`
   margin-top: 24px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
 `;

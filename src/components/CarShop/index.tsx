@@ -7,11 +7,12 @@ interface CarShopProps {
   id: string;
   name: string;
   image: string;
+  className: string;
 }
 
-const CarShop = ({ id, name, image }: CarShopProps) => (
+const CarShop = ({ id, name, image, className }: CarShopProps) => (
   <Link href={`/car-shop/${id}`}>
-    <Container>
+    <Container className={className}>
       {image ? (
         <img
           src={`http://localhost:3333/static/${image}`}

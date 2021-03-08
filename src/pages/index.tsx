@@ -36,12 +36,13 @@ export default function Home({ carShops }: HomeProps) {
       <PageWrapper>
         <CarShops>
           {carShops ? (
-            carShops.map(carShop => (
+            carShops.map((carShop, index) => (
               <CarShop
                 key={carShop.id}
                 id={carShop.id}
                 image={carShop.image}
                 name={carShop.name}
+                className={index % 4 === 0 && 'no-margin'}
               />
             ))
           ) : (
